@@ -1,96 +1,108 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
-    />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratibha Swami | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans:wght@400;500;700;900&display=swap" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Space Grotesk', 'Noto Sans', sans-serif; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="bg-white dark:bg-[#f7f9fa] text-[#1a202c]">
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center min-h-[60vh] px-4 pt-12 pb-8 bg-gradient-to-b from-[#e0e7ff] to-white">
+    <img src="Pratibha Dit.jpg" alt="Pratibha Swami" class="w-36 h-36 rounded-full border-4 border-[#2563eb] shadow-lg mb-6 object-cover" />
+    <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 tracking-tight">Pratibha Swami</h1>
+    <p class="text-lg sm:text-xl font-medium text-[#2563eb] mb-4">Full Stack Developer & AI Enthusiast</p>
+    <a href="Pratibha_Swami_Resume.pdf" download class="inline-block px-6 py-2 bg-[#2563eb] text-white font-bold rounded-lg shadow hover:bg-[#1d4ed8] transition">Download Resume</a>
+  </section>
 
-    <title></title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <!-- About Me Section -->
+  <section id="about" class="max-w-3xl mx-auto px-4 py-12 fade-in">
+    <h2 class="text-2xl font-bold mb-4 text-center">About Me</h2>
+    <p class="text-center text-[#4a5568] mb-4">I'm a 3rd-year B.Tech CSE student passionate about building impactful digital solutions. I love working on full-stack projects and exploring the world of AI/ML. My goal is to create technology that makes a difference.</p>
+    <div class="flex flex-col items-center gap-2">
+      <ul class="flex flex-wrap gap-3 justify-center mt-2">
+        <li class="bg-[#e0e7ff] text-[#2563eb] px-3 py-1 rounded-full text-sm font-semibold shadow">HTML</li>
+        <li class="bg-[#e0e7ff] text-[#2563eb] px-3 py-1 rounded-full text-sm font-semibold shadow">CSS</li>
+        <li class="bg-[#e0e7ff] text-[#2563eb] px-3 py-1 rounded-full text-sm font-semibold shadow">JavaScript</li>
+        <li class="bg-[#e0e7ff] text-[#2563eb] px-3 py-1 rounded-full text-sm font-semibold shadow">Node.js</li>
+        <li class="bg-[#e0e7ff] text-[#2563eb] px-3 py-1 rounded-full text-sm font-semibold shadow">AI/ML</li>
+      </ul>
+    </div>
+  </section>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div
-      class="relative flex size-full min-h-screen flex-col bg-white dark:bg-[#f7f9fa] justify-between group/design-root overflow-x-hidden"
-      style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'
-    >
-      <div>
-        <div class="flex items-center bg-white dark:bg-[#f7f9fa] p-4 pb-2 justify-between border-b border-gray-200">
-          <h2 class="text-[#1a202c] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">Portfolio</h2>
-          <div class="flex w-12 items-center justify-end">
-            <button
-              id="menuBtn"
-              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#1a202c] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0 hover:bg-gray-100 transition"
-              onclick="openSidebar()"
-            >
-              <div class="text-[#1a202c]" data-icon="List" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-                  ></path>
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div class="flex p-4 @container">
-          <div class="flex w-full flex-col gap-4 items-center">
-            <div class="flex gap-4 flex-col items-center">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 border-4 border-[#e2e8f0] shadow-md"
-                style='background-image: url("C:\Users\prati\OneDrive\Desktop\Portfolio\Pratibha Dit.jpg");'
-              ></div>
-              <div class="flex flex-col items-center justify-center">
-                <p class="text-[#1a202c] text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Pratibha Swami</p>
-                <p class="text-[#4a5568] text-base font-normal leading-normal text-center">B.Tech CSE Student</p>
-                <p class="text-[#4a5568] text-base font-normal leading-normal text-center">Full Stack Development &amp; AI/ML</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="text-[#2d3748] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
-          Aspiring software engineer with a passion for crafting innovative solutions. Specializing in Full Stack Development and AI/ML. Explore my projects below.
-        </p>
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-5xl mx-auto px-4 py-12 fade-in">
+    <h2 class="text-2xl font-bold mb-8 text-center">Projects</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      <!-- Project 1 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 shadow hover:shadow-lg transition flex flex-col">
+        <h3 class="text-xl font-bold mb-2">Netflix Clone</h3>
+        <p class="text-[#4a5568] mb-2">A responsive clone of the Netflix homepage built using pure HTML and CSS. This project replicates the design and layout of Netflix's official landing page.</p>
+        <a href="https://pratibhaxs.github.io/Netflix-Clone/" target="_blank" class="text-[#2563eb] font-bold hover:underline mt-auto">View Project</a>
       </div>
-      <div>
-        <div class="flex px-4 py-3 justify-center">
-          <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#2563eb] text-white text-sm font-bold leading-normal tracking-[0.015em] shadow hover:bg-[#1d4ed8] transition"
-            onclick="window.location.href='projects.html'"
-          >
-            <span class="truncate">View Projects</span>
-          </button>
-        </div>
-        <div class="h-5 bg-white dark:bg-[#f7f9fa]"></div>
+      <!-- Project 2 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 shadow hover:shadow-lg transition flex flex-col">
+        <h3 class="text-xl font-bold mb-2">JeevanSetu Health Profile App</h3>
+        <p class="text-[#4a5568] mb-2">A modern web application for creating, managing, and verifying emergency health profiles using a unique JeevanSetu ID. Built with Node.js, Express, MySQL, and Tailwind CSS.</p>
+        <a href="https://pratibhaxs.github.io/JeevanSetu/" target="_blank" class="text-[#2563eb] font-bold hover:underline mt-auto">View Project</a>
+      </div>
+      <!-- Project 3 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 shadow hover:shadow-lg transition flex flex-col">
+        <h3 class="text-xl font-bold mb-2">Personal Portfolio Website</h3>
+        <p class="text-[#4a5568] mb-2">My personal portfolio website built with HTML, CSS, and JavaScript. This project showcases my skills, projects, and contact information in a clean and professional design.</p>
+        <a href="https://pratibhaxs.github.io/Portfolio/" target="_blank" class="text-[#2563eb] font-bold hover:underline mt-auto">View Project</a>
       </div>
     </div>
-    <!-- Sidebar Overlay and Drawer -->
-    <div id="sidebarOverlay" class="hidden fixed inset-0 bg-black bg-opacity-30 z-40 transition-opacity"></div>
-    <div id="sidebar" class="hidden fixed top-0 right-0 h-full w-72 max-w-full bg-white border-l border-gray-200 shadow-2xl z-50 flex flex-col p-8 gap-8 transform translate-x-full transition-transform duration-300">
-      <button class="self-end text-[#1a202c] text-3xl hover:text-[#2563eb] focus:outline-none" onclick="closeSidebar()">&times;</button>
-      <div class="flex flex-col gap-6 mt-8">
-        <a href="contact.html" class="text-[#1a202c] text-xl font-semibold hover:text-[#2563eb] transition-colors">Contact Me</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="max-w-2xl mx-auto px-4 py-12 fade-in">
+    <h2 class="text-2xl font-bold mb-4 text-center">Contact Me</h2>
+    <form class="bg-white rounded-xl shadow p-6 flex flex-col gap-4" name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" placeholder="Your Name" required class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition" />
+      <input type="email" name="email" placeholder="Your Email" required class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition" />
+      <textarea name="message" placeholder="Your Message" required rows="4" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition"></textarea>
+      <button type="submit" class="bg-[#2563eb] text-white font-bold py-2 rounded-lg shadow hover:bg-[#1d4ed8] transition">Send Message</button>
+    </form>
+    <div class="flex justify-center gap-6 mt-6">
+      <a href="https://www.linkedin.com/in/pratibhaxs/" target="_blank" aria-label="LinkedIn" class="text-[#2563eb] hover:text-[#1d4ed8] text-2xl transition">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.62z"/></svg>
+      </a>
+      <a href="https://github.com/pratibhaxs" target="_blank" aria-label="GitHub" class="text-[#2563eb] hover:text-[#1d4ed8] text-2xl transition">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576 4.765-1.589 8.2-6.085 8.2-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#f1f5f9] py-6 mt-8 shadow-inner">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="text-[#4a5568] text-sm">&copy; 2024 Pratibha Swami. All rights reserved.</div>
+      <div class="flex gap-4 text-sm">
+        <a href="#about" class="hover:text-[#2563eb] transition">About</a>
+        <a href="#projects" class="hover:text-[#2563eb] transition">Projects</a>
+        <a href="#contact" class="hover:text-[#2563eb] transition">Contact</a>
       </div>
     </div>
-    <script>
-    function openSidebar() {
-      document.getElementById('sidebar').classList.remove('hidden');
-      document.getElementById('sidebar').classList.remove('translate-x-full');
-      document.getElementById('sidebarOverlay').classList.remove('hidden');
-    }
-    function closeSidebar() {
-      document.getElementById('sidebar').classList.add('translate-x-full');
-      setTimeout(function() {
-        document.getElementById('sidebar').classList.add('hidden');
-        document.getElementById('sidebarOverlay').classList.add('hidden');
-      }, 300);
-    }
-    document.getElementById('menuBtn').onclick = openSidebar;
-    document.getElementById('sidebarOverlay').onclick = closeSidebar;
-    </script>
-  </body>
+  </footer>
+
+  <script>
+    // Fade-in animation for sections
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.fade-in').forEach(function(el, i) {
+        setTimeout(() => el.classList.add('visible'), 200 + i * 200);
+      });
+    });
+  </script>
+</body>
 </html>
