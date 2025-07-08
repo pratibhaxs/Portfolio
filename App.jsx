@@ -52,8 +52,8 @@ function App() {
     <div className="bg-background dark:bg-darkbg text-gunmetal dark:text-[#F9FAFB] min-h-screen transition-colors duration-300">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/90 dark:bg-[#181A20]/90 backdrop-blur shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-          <div className="text-xl font-extrabold tracking-tight text-primary dark:text-secondary">Pratibha Swami</div>
+        <div className="max-w-6xl mx-auto px-4 flex justify- items-center h-16">
+          
           <nav className="hidden md:flex gap-6 text-base font-medium">
             <a href="#about" className="hover:text-primary dark:hover:text-secondary transition">About</a>
             <a href="#projects" className="hover:text-primary dark:hover:text-secondary transition">Projects</a>
@@ -75,8 +75,7 @@ function App() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-[70vh] px-4 pt-12 pb-8 bg-gradient-to-br from-background via-white to-background dark:from-[#181A20] dark:via-[#111827] dark:to-[#181A20] relative overflow-hidden fade-in">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" /> <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <img src="/Pratibha Dit.jpg" alt="Pratibha Swami" className="w-40 h-40 rounded-full shadow-2xl mb-6 object-cover border-4 border-white dark:border-[#181A20]" />
         <h1 className="text-4xl font-extrabold mb-2 tracking-tight text-center text-gunmetal dark:text-[#F9FAFB]">Pratibha Swami</h1>
         <p className="text-xl font-medium text-primary dark:text-secondary mb-6 text-center">Full Stack Developer & AI Enthusiast</p>
@@ -117,11 +116,11 @@ function App() {
         <div className="bg-white dark:bg-[#181A20] rounded-2xl shadow-md p-8 flex flex-col items-center gap-6">
           <h2 className="text-3xl font-bold mb-2 text-center text-gunmetal dark:text-[#F9FAFB]">Contact Me</h2>
           <div className="flex flex-col items-center gap-3 mb-2">
-            <div className="flex items-center gap-2 text-secondary text-lg font-semibold">
+            <div className="flex items-center gap-2 text-primary text-lg font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" className="inline-block" width="22" height="22" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
               <span>+91 90684 54330</span>
             </div>
-            <div className="flex items-center gap-2 text-secondary text-lg font-semibold">
+            <div className="flex items-center gap-2 text-primary text-lg font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" className="inline-block" width="22" height="22" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20V8.99l8 7 8-7V20H4z"/></svg>
               <span>pratibhaswami561@gmail.com</span>
             </div>

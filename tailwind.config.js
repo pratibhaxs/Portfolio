@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: 'class',
+  darkMode: false, // Remove dark mode toggle, always use dark
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -7,10 +7,9 @@ module.exports = {
         primary: '#6366F1', // Indigo
         secondary: '#38BDF8', // Sky
         accent: '#FACC15', // Yellow
-        background: '#F9FAFB', // Light bg
-        darkbg: '#111827', // Dark bg
-        gunmetal: '#1F2937', // Text
-        coolgray: '#6B7280', // Secondary text
+        background: '#111827', // Always dark bg
+        gunmetal: '#F9FAFB', // Main text (light on dark)
+        coolgray: '#A1A1AA', // Secondary text
       },
     },
   },
