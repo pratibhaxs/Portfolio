@@ -5,7 +5,7 @@ const projects = [
   {
     title: 'Netflix Clone',
     description: `A responsive clone of the Netflix homepage built using pure HTML and CSS. This project replicates the design and layout of Netflix's official landing page.`,
-    link: 'https://pratibhaxs.github.io/Netflix-Clone/',
+    link: 'https://pratibhaxs.github.io/NetflixClone/',
   },
   {
     title: 'JeevanSetu Health Profile App',
