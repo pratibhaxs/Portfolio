@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: false, // Remove dark mode toggle, always use dark
+  
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
