@@ -1,7 +1,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-
+import photo from './photo.jpeg';
+import emailjs from '@emailjs/browser';
 // ── Google Fonts injected via style tag ──────────────────────────────────────
 const FontLoader = () => (
   <style>{`
@@ -185,8 +186,6 @@ const Nav = () => {
       transition={{ duration: .7, ease: [.22,1,.36,1] }}
       style={{
         position:"fixed", top:0, left:0, right:0, zIndex:100,
-        display:"flex", alignItems:"center", justifyContent:"space-between",
-        padding:"20px 40px",
         background: scrolled ? "rgba(10,10,10,.9)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
         borderBottom: scrolled ? "1px solid var(--border)" : "none",
@@ -229,24 +228,42 @@ const Hero = () => {
           Full-Stack Developer
         </motion.p>
 
-        <div style={{ overflow:"hidden" }}>
-          <h1 style={{
-            fontFamily:"var(--font-disp)", fontSize:"clamp(72px,12vw,160px)",
-            lineHeight:.88, letterSpacing:".02em",
-            display:"flex", flexWrap:"wrap", gap:"0 8px",
-          }}>
-            {chars.map((c,i) => (
-              <motion.span key={i}
-                initial={{ y:"100%", opacity:0 }}
-                animate={{ y:"0%", opacity:1 }}
-                transition={{ delay:.5 + i*.04, duration:.7, ease:[.22,1,.36,1] }}
-                style={{ display:"inline-block", color: c===" " ? "transparent" : "var(--text)" }}>
-                {c === " " ? "\u00A0" : c}
-              </motion.span>
-            ))}
-          </h1>
-        </div>
+        <div style={{ display:"flex", alignItems:"center", gap:40 }}>
+  <div style={{ overflow:"hidden" }}>
+    <h1 style={{
+      fontFamily:"var(--font-disp)", fontSize:"clamp(42px,7vw,100px)",
+      lineHeight:.88, letterSpacing:".02em",
+      display:"flex", flexWrap:"wrap", gap:"0 6px",
+    }}>
+      {chars.map((c,i) => (
+        <motion.span key={i}
+          initial={{ y:"100%", opacity:0 }}
+          animate={{ y:"0%", opacity:1 }}
+          transition={{ delay:.5 + i*.04, duration:.7, ease:[.22,1,.36,1] }}
+          style={{ display:"inline-block", color: c===" " ? "transparent" : "var(--text)" }}>
+          {c === " " ? "\u00A0" : c}
+        </motion.span>
+      ))}
+    </h1>
+  </div>
 
+  {/* Profile Photo */}
+  <motion.div
+    initial={{ opacity:0, scale:.8 }}
+    animate={{ opacity:1, scale:1 }}
+    transition={{ delay:1, duration:.8, ease:[.22,1,.36,1] }}
+    style={{
+      width:"clamp(120px,12vw,180px)",
+      height:"clamp(120px,12vw,180px)",
+      borderRadius:"50%",
+      overflow:"hidden",
+      border:"2px solid var(--accent)",
+      flexShrink:0,
+    }}>
+    <img src={photo} alt="Pratibha Swami"
+      style={{ width:"100%", height:"100%", objectFit:"cover" }} />
+  </motion.div>
+</div>
         <motion.p
           initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:1.2,duration:.8}}
           style={{
@@ -303,8 +320,10 @@ const Marquee = () => {
 
 // ── Projects ─────────────────────────────────────────────────────────────────
 const projects = [
-  { id:"01", title:"EasyMessage", type:"SaaS Messaging Platform", desc:"Built a SaaS-based WhatsApp messaging platform enabling users to send personalized messages without saving phone numbers. Developed modular features including contact management, group messaging, reusable templates, advanced search/filter, and secure user profile handling", stack:["HTML5","CSS3","JavaScript","React.js","Node.js","Tailwind CSS","Firebase"], accent:"#e8ff00" },
-  { id:"02", title:"Collaborative-App", type:"Real-Time Multiuser Editor", desc:"Developed a real-time collaborative workspace with live multi-user synchronization. Implemented room-based collaboration architecture enabling simultaneous text editing and shared canvas drawing.", stack:["HTML5","CSS3","JavaScript","React.js","Node.js", "MongoDB", "Socket.IO"], accent:"#ff4d00" },
+  { id:"01", title:"EasyMessage", type:"SaaS Messaging Platform", desc:"Built a SaaS-based WhatsApp messaging platform enabling users to send personalized messages without saving phone numbers. Developed modular features including contact management, group messaging, reusable templates, advanced search/filter, and secure user profile handling", stack:["HTML5","CSS3","JavaScript","React.js","Node.js","Tailwind CSS","Firebase"], accent:"#e8ff00", github:"https://github.com/pratibhaxs/EasyMessage",
+    live:"easy-message.vercel.app" },
+  { id:"02", title:"Collaborative-App", type:"Real-Time Multiuser Editor", desc:"Developed a real-time collaborative workspace with live multi-user synchronization. Implemented room-based collaboration architecture enabling simultaneous text editing and shared canvas drawing.", stack:["HTML5","CSS3","JavaScript","React.js","Node.js", "MongoDB", "Socket.IO"], accent:"#ff4d00", github:"https://github.com/pratibhaxs/Collaborative-App",
+    live:"https://orbita.vercel.app" },
   
 ];
 
@@ -351,8 +370,40 @@ const ProjectCard = ({ p, index }) => {
         ))}
       </div>
 
-      
+       {/* GitHub + Live Links */}
+      <div style={{ display:"flex", gap:12, marginTop:20, paddingTop:20, borderTop:"1px solid var(--border)" }}>
+        <a href={p.github} target="_blank" rel="noopener noreferrer" style={{
+          display:"flex", alignItems:"center", gap:6,
+          fontFamily:"var(--font-mono)", fontSize:11, letterSpacing:".1em",
+          color:"var(--muted)", textDecoration:"none", textTransform:"uppercase",
+          border:"1px solid var(--border)", padding:"8px 16px",
+          transition:"all .2s",
+        }}
+        onMouseEnter={e=>{e.currentTarget.style.borderColor=p.accent;e.currentTarget.style.color=p.accent}}
+        onMouseLeave={e=>{e.currentTarget.style.borderColor="var(--border)";e.currentTarget.style.color="var(--muted)"}}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+          </svg>
+          GitHub
+        </a>
 
+        <a href={p.live} target="_blank" rel="noopener noreferrer" style={{
+          display:"flex", alignItems:"center", gap:6,
+          fontFamily:"var(--font-mono)", fontSize:11, letterSpacing:".1em",
+          color:"var(--muted)", textDecoration:"none", textTransform:"uppercase",
+          border:"1px solid var(--border)", padding:"8px 16px",
+          transition:"all .2s",
+        }}
+        onMouseEnter={e=>{e.currentTarget.style.borderColor=p.accent;e.currentTarget.style.color=p.accent;e.currentTarget.style.background=p.accent+"11"}}
+        onMouseLeave={e=>{e.currentTarget.style.borderColor="var(--border)";e.currentTarget.style.color="var(--muted)";e.currentTarget.style.background="transparent"}}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          Live Demo
+        </a>
+      </div>
       {/* Bottom accent line */}
       <motion.div
         initial={{scaleX:0}} whileInView={{scaleX:1}} viewport={{once:true}}
@@ -497,8 +548,8 @@ const Contact = () => {
     {l === "Email"
   ? "pratibhaswami561@gmail.com"
   : l === "LinkedIn"
-  ? "@pratibhaxs"
-  : "@pratibhaxs"}
+  ? "pratibhaxs"
+  : "pratibhaxs"}
       </a>
               </div>
             ))}
