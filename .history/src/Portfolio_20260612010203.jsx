@@ -435,15 +435,11 @@ const Work = () => (
   <section id="work">
     <div className="container">
       <div style={{ textAlign:"center", marginBottom:64 }}>
-        <div>
-
-          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7, ease: [.22, 1, .36, 1] }}
-            style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(42px,6vw,80px)", lineHeight: .9 }}>
-            THINGS<span style={{ color: "var(--accent)" }}>I BUILT</span>
-          </motion.h2>
-        </div>
-
-      </div>
+  <motion.h2 ...
+    style={{ fontFamily:"var(--font-disp)", fontSize:"clamp(42px,6vw,80px)", lineHeight:.9 }}>
+    THINGS I <span style={{color:"var(--accent)"}}>BUILT</span>
+  </motion.h2>
+</div>
       <div className="work-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(480px,1fr))", gap: 2 }}>
         {projects.map((p, i) => <ProjectCard key={p.id} p={p} index={i} />)}
       </div>
@@ -497,10 +493,10 @@ const Stack = () => (
   <section id="stack" style={{ borderTop: "1px solid var(--border)", background: "var(--surface)" }}>
     <div className="container">
 
-      <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}
-        style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(40px,6vw,80px)", marginBottom: 64, lineHeight: .9, textAlign:"center"  }}>
-        Tech<span style={{ color: "var(--accent)" }}>Stack</span>
-      </motion.h2>
+    <motion.h2 ...
+  style={{ fontFamily:"var(--font-disp)", fontSize:"clamp(40px,6vw,80px)", marginBottom:64, lineHeight:.9, textAlign:"center" }}>
+  Tech<span style={{color:"var(--accent)"}}>Stack</span>
+</motion.h2>
 
       <div className="stack-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 1, background: "var(--border)" }}>
         {stackData.map((s, ci) => (

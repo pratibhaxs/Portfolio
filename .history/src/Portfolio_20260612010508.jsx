@@ -434,7 +434,7 @@ const ProjectCard = ({ p, index }) => {
 const Work = () => (
   <section id="work">
     <div className="container">
-      <div style={{ textAlign:"center", marginBottom:64 }}>
+      
         <div>
 
           <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7, ease: [.22, 1, .36, 1] }}
@@ -498,7 +498,7 @@ const Stack = () => (
     <div className="container">
 
       <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}
-        style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(40px,6vw,80px)", marginBottom: 64, lineHeight: .9, textAlign:"center"  }}>
+        style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(40px,6vw,80px)", marginBottom: 64, lineHeight: .9 }}>
         Tech<span style={{ color: "var(--accent)" }}>Stack</span>
       </motion.h2>
 

@@ -275,6 +275,7 @@ const Hero = () => {
               height: "clamp(120px,12vw,180px)",
               borderRadius: "50%",
               overflow: "hidden",
+              border: "2px solid var(--accent)",
               flexShrink: 0,
             }}>
             <img src={photo} alt="Pratibha Swami"
@@ -295,7 +296,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5, duration: .7 }}
           className="hero-buttons" style={{ display: "flex", gap: 16, marginTop: 52, alignItems: "center" }}>
           <a href="#work" style={{
-            background:"var(--accent)", color:"#fff",
+            
             fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: ".14em",
             padding: "14px 32px", textDecoration: "none", textTransform: "uppercase",
             transition: "transform .2s",
@@ -434,7 +435,7 @@ const ProjectCard = ({ p, index }) => {
 const Work = () => (
   <section id="work">
     <div className="container">
-      <div style={{ textAlign:"center", marginBottom:64 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64 }}>
         <div>
 
           <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7, ease: [.22, 1, .36, 1] }}
@@ -498,7 +499,7 @@ const Stack = () => (
     <div className="container">
 
       <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}
-        style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(40px,6vw,80px)", marginBottom: 64, lineHeight: .9, textAlign:"center"  }}>
+        style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(40px,6vw,80px)", marginBottom: 64, lineHeight: .9 }}>
         Tech<span style={{ color: "var(--accent)" }}>Stack</span>
       </motion.h2>
 
@@ -732,7 +733,7 @@ const Contact = () => {
                   disabled={loading}
                   style={{
                     background: loading ? "var(--muted)" : "var(--accent)",
-                    color: "#fff", border: "none",
+                    color: "#000", border: "none",
                     padding: "16px 40px",
                     fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: ".14em",
                     textTransform: "uppercase",

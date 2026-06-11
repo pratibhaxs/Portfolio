@@ -498,7 +498,7 @@ const Stack = () => (
     <div className="container">
 
       <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}
-        style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(40px,6vw,80px)", marginBottom: 64, lineHeight: .9, textAlign:"center"  }}>
+        style={{ fontFamily: "var(--font-disp)", fontSize: "clamp(40px,6vw,80px)", marginBottom: 64, lineHeight: .9 }}>
         Tech<span style={{ color: "var(--accent)" }}>Stack</span>
       </motion.h2>
 
