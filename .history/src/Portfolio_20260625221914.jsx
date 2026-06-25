@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import photo from './photo.png';
+import photo from '';
 import emailjs from '@emailjs/browser';
 // ── Google Fonts injected via style tag ──────────────────────────────────────
 const FontLoader = () => (
